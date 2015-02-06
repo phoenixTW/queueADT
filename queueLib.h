@@ -4,6 +4,7 @@
 // #define queueLib_h_
 
 typedef struct queue Queue;
+typedef Queue* Queue_ptr;
 
 struct queue {
 	LinkedList *list;
@@ -12,5 +13,6 @@ struct queue {
 };
 
 Queue createQueue(void);
+int enqueue(Queue_ptr, void*);
 
 // #endif
