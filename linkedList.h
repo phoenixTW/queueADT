@@ -1,9 +1,13 @@
+#ifndef _linked_list_h_
+#define _linked_list_h_
+
 typedef struct linkedList LinkedList;
 typedef struct node Node;
 typedef struct students Students;
 typedef Students* Student_ptr;
 typedef Node* Node_ptr;
 typedef int (predicate)(void *data);
+typedef char* String;
 
 struct students {
 	int roll;
@@ -33,3 +37,5 @@ int indexOf(LinkedList, void *);
 void * deleteElementAt(LinkedList*, int);
 int asArray(LinkedList, void **);
 LinkedList * filter(LinkedList, int (*)(void *));
+
+#endif
