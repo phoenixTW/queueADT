@@ -21,23 +21,23 @@ void test_createQueue_should_return_an_empty_queue_with_null_front () {
 	assertEqual((*q.front), 0x0);
 }
 
-// void test_createQueue_should_return_an_empty_queue_with_null_rear () {
-// 	assertEqual(q.list->count, 0);
-// 	assertEqual(q.list->tail, q.rear);
-// 	assertEqual(q.rear, 0x0);
-// }
+void test_createQueue_should_return_an_empty_queue_with_null_rear () {
+	assertEqual(q.list->count, 0);
+	assertEqual(q.list->tail, *q.rear);
+	assertEqual(*q.rear, 0x0);
+}
 
-// void test_enqueue_should_return_1_for_enqueuing_a_single_data () {
-// 	int data = 2;
-// 	assertEqual(enqueue(&q, &data), 1);
-// }
+void test_enqueue_should_return_1_for_enqueuing_a_single_data () {
+	int data = 2;
+	assertEqual(enqueue(&q, &data), 1);
+}
 
 // void test_enqueue_should_return_2_for_enqueuing_two_data () {
 // 	int data1 = 2, data2 = 4;
 // 	assertEqual(enqueue(&q, &data1), 1);
 // 	assertEqual(enqueue(&q, &data2), 2);
 // 	assertEqual(*(int*)((*q.front)->data), 2);
-// 	assertEqual(*(int*)(q.rear->data), 4);
+// 	assertEqual(*(int*)(*q.rear->data), 4);
 // }
 
 // void test_enqueue_should_return_2_for_enqueuing_two_data_in_char_type () {
@@ -45,7 +45,7 @@ void test_createQueue_should_return_an_empty_queue_with_null_front () {
 // 	assertEqual(enqueue(&q, &data1), 1);
 // 	assertEqual(enqueue(&q, &data2), 2);
 // 	assertEqual(*(char*)((*q.front)->data), 'a');
-// 	assertEqual(*(char*)(q.rear->data), 'b');
+// 	assertEqual(*(char*)(*q.rear->data), 'b');
 // }
 
 // void test_enqueue_should_return_2_for_enqueuing_two_data_in_float_type () {
