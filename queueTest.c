@@ -32,21 +32,21 @@ void test_enqueue_should_return_1_for_enqueuing_a_single_data () {
 	assertEqual(enqueue(&q, &data), 1);
 }
 
-// void test_enqueue_should_return_2_for_enqueuing_two_data () {
-// 	int data1 = 2, data2 = 4;
-// 	assertEqual(enqueue(&q, &data1), 1);
-// 	assertEqual(enqueue(&q, &data2), 2);
-// 	assertEqual(*(int*)((*q.front)->data), 2);
-// 	assertEqual(*(int*)(*q.rear->data), 4);
-// }
+void test_enqueue_should_return_2_for_enqueuing_two_data () {
+	int data1 = 2, data2 = 4;
+	assertEqual(enqueue(&q, &data1), 1);
+	assertEqual(enqueue(&q, &data2), 2);
+	assertEqual(*(int*)((*q.front)->data), 2);
+	assertEqual(*(int*)((*q.rear)->data), 4);
+}
 
-// void test_enqueue_should_return_2_for_enqueuing_two_data_in_char_type () {
-// 	char data1 = 'a', data2 = 'b';
-// 	assertEqual(enqueue(&q, &data1), 1);
-// 	assertEqual(enqueue(&q, &data2), 2);
-// 	assertEqual(*(char*)((*q.front)->data), 'a');
-// 	assertEqual(*(char*)(*q.rear->data), 'b');
-// }
+void test_enqueue_should_return_2_for_enqueuing_two_data_in_char_type () {
+	char data1 = 'a', data2 = 'b';
+	assertEqual(enqueue(&q, &data1), 1);
+	assertEqual(enqueue(&q, &data2), 2);
+	assertEqual(*(char*)((*q.front)->data), 'a');
+	assertEqual(*(char*)((*q.rear)->data), 'b');
+}
 
 // void test_enqueue_should_return_2_for_enqueuing_two_data_in_float_type () {
 // 	float data1 = 1.01, data2 = 1.02;
