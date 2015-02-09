@@ -9,12 +9,6 @@ Queue createQueue(void) {
 
 int enqueue (Queue_ptr q, void* data) {
 	int isAdded = add_to_list(q->list, create_node(data));
-	
-	// if(isAdded > 0) {
-	// 	if(!(q->front)) q->front = q->list->head;
-	// 	q->rear = q->list->tail;
-	// }
-
 	return (isAdded < 1) ? -1 : q->list->count;	
 }
 
