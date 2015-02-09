@@ -71,3 +71,12 @@ void test_dequeue_should_return_2_for_deleting_an_element_in_int_type () {
 	assertEqual(*(int*)dequeue(&q), 2);	
 	assertEqual(*(int*)((*q.front)->data), 4);
 }
+
+void test_dequeue_should_return_2_and_4_for_deleting_two_element_in_int_type () {
+	int data1 = 2, data2 = 4;
+	assertEqual(enqueue(&q, &data1), 1);
+	assertEqual(enqueue(&q, &data2), 2);
+	assertEqual(*(int*)dequeue(&q), 2);	
+	assertEqual(*(int*)dequeue(&q), 4);	
+	assertEqual((*q.front), 0x0);
+}
