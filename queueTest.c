@@ -48,13 +48,13 @@ void test_enqueue_should_return_2_for_enqueuing_two_data_in_char_type () {
 	assertEqual(*(char*)((*q.rear)->data), 'b');
 }
 
-// void test_enqueue_should_return_2_for_enqueuing_two_data_in_float_type () {
-// 	float data1 = 1.01, data2 = 1.02;
-// 	assertEqual(enqueue(&q, &data1), 1);
-// 	assertEqual(enqueue(&q, &data2), 2);
-// 	assertEqual(*(float*)(q->front->data), 1.01);
-// 	assertEqual(*(float*)(q->rear->data), 1.02);
-// }
+void test_enqueue_should_return_2_for_enqueuing_two_data_in_float_type () {
+	float data1 = 1.01, data2 = 1.02;
+	assertEqual(enqueue(&q, &data1), 1);
+	assertEqual(enqueue(&q, &data2), 2);
+	assertEqual(*(float*)((*q.front)->data), 1.01);
+	assertEqual(*(float*)((*q.rear)->data), 1.02);
+}
 
 void test_enqueue_should_return_2_for_enqueuing_two_data_in_String_type () {
 	String data1 = "Kaustav", data2 = "chakraborty";
